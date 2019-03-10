@@ -52,8 +52,8 @@ func main() {
 
 	username, err := jsonparser.GetString(config, "docker", "container", "username")
 	if err != nil {
-		logger.Get().Debugw("could not find sftp user definition, falling back to \"pterodactyl\"", zap.Error(err))
-		username = "pterodactyl"
+		logger.Get().Debugw("could not find sftp user definition, falling back to \"root\"", zap.Error(err))
+		username = "root"
 	}
 
 	logger.Get().Infow("using system daemon user", zap.String("username", username))
